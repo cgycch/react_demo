@@ -1,0 +1,10 @@
+spring:
+  security:
+    user:
+      name: cch
+      password: 123456
+  devtools: 
+    restart: 
+      enabled: false
+swagger2:
+  enable: true	

@@ -1,15 +1,8 @@
+server:
+  prot: 8080
+  servlet:
+    context-path: /rest
+
 spring:
   profiles:
     active: dev
-
----
-spring:
-  profiles: dev
-swagger2:
-  enable: true	
-
----
-spring:
-  profiles: prod
-swagger2:
-  enable: false
