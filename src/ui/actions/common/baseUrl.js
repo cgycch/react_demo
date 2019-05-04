@@ -1,0 +1,1 @@
+export const baseContex = 'http://localhost:8080'

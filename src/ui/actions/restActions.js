@@ -1,21 +1,34 @@
-export const list = ()=>{
-    console.log('list user abc')
-    var newArray = ["a","b","c"]
-    let users = newArray.map(item => {
-        return {
-            userName: 'user'+item,
-            sex: item === 'a'? '男':item === 'b'?'女':'保密',
-            age: 18
-        }
-    })
-    return users
+import { baseContex } from './common/baseUrl'
+import { baseFetch } from './common/baseFetch'
+
+
+export const list = (curPage, pageSize, successDo, errorDo) => {
+    let url = baseContex + '/api/user/page?pageIndex=' + curPage + '&pageSize=' + pageSize
+    console.log('list url', url)
+    let options = {}
+    options.method = 'GET'
+    baseFetch(url, options, successDo, errorDo);
 }
 
 
-export const load = (key1,key2)=>{
-    console.log('load',key1,key2)
-    return{
-        userName:'userName',
-        phone:'123'
+export const load = (userId, successDo, errorDo) => {
+    let url = baseContex + '/api/user/' + userId
+    console.log('load url', url)
+    baseFetch(url, {}, successDo, errorDo);
+}
+
+
+export const add = (user, successDo, errorDo) => {
+    let url = baseContex + '/api/user/add'
+    console.log('add url', url)
+    let options = {}
+    options.method = 'POST'
+    //options.mode = 'cors'
+    options.headers = {
+        'Content-Type': 'application/json;charset=UTF-8',
+        //'Access-Control-Allow-Origin':'*',
     }
+    options.body = JSON.stringify(user)
+    baseFetch(url, options, successDo, errorDo);
 }
+
