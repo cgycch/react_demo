@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { add } from '../actions/restActions'
+import { myFetch, myFetch2, myFetch3} from '../actions/baseAction'
 class BaseItem extends Component {
 
   componentDidMount = () => {
@@ -7,7 +8,58 @@ class BaseItem extends Component {
   }
 
   onClick = () => {
-    console.log('hello button click')
+    this.testLoad();
+  }
+
+  onClick1 = () => {
+    this.testLoadErr();
+  }
+  
+  onClick2 = () => {
+    this.testNotExist();
+  }
+
+  successProcess = (result) => {
+    console.log('result', result);
+  }
+
+  failedProcess = (e) => {
+    console.log('error', e);
+  }
+  /**
+   * test load
+   */
+  testLoad() {
+    console.log('test load');
+    myFetch('params input').then(res => {
+      console.log('the result is', res)
+    })
+  }
+
+  /**
+   * test load
+   */
+  testLoadErr() {
+    console.log('test load Err');
+    myFetch2('params input').then(res => {
+      console.log('the result is', res)
+    })
+  }
+
+  /**
+   * test load
+   */
+  testNotExist() {
+    console.log('test load Err');
+    myFetch3('params input').then(res => {
+      console.log('the result is', res)
+    })
+  }
+
+  /**
+   * test add user
+   */
+  testAdd() {
     // let user = new FormData()
     // user.append('userId','9998')
     // user.append('userName','xiaohuihui')
@@ -20,15 +72,8 @@ class BaseItem extends Component {
       "phone": 18812345678,
       "userId": "9998",
       "userName": "xiaohuihui"
-    }
-    add(user,this.successProcess, this.failedProcess)
-    console.log('test end')
-  }
-  successProcess = (result) => {
-    console.log('result', result);
-  }
-  failedProcess = (e) => {
-    console.log('error', e);
+    };
+    add(user, this.successProcess, this.failedProcess);
   }
 
   render() {
@@ -36,6 +81,8 @@ class BaseItem extends Component {
       <div>
         <h3>Hello BaseItem</h3>
         <button onClick={this.onClick}>click me</button>
+        <button onClick={this.onClick1}>click err</button>
+        <button onClick={this.onClick2}>click not exist</button>
       </div>
     );
   }
