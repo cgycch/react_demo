@@ -1,0 +1,33 @@
+import React, { Component } from 'react';
+import { myLogin } from '../actions/baseAction'
+class LoginPage extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { 
+        }
+    }
+
+  testLogin(){
+    console.log('test login');
+    let user = {
+        "username": "cch",
+        "password": "123456"
+      };
+    myLogin(user).then(res => {
+      console.log('the result is', res)
+    })
+  }
+
+    render() {
+        return (
+            <div >
+                <h3>Hello User Login Page</h3>
+                <div>
+                    <button onClick={this.testLogin}>login</button>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default LoginPage;

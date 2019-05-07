@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import BaseItem from './BaseItem'
 import UserListPage from '../pages/UserListPage'
+import LoginPage from '../pages/LoginPage'
 
 class BasicExample extends Component {
     render() {
@@ -14,6 +15,9 @@ class BasicExample extends Component {
                         </li>
                         <li>
                             <Link to="/about">About</Link>
+                        </li>
+                        <li>
+                            <Link to="/login">Login</Link>
                         </li>
                         <li>
                             <Link to="/baseItem">BaseItem</Link>
@@ -30,6 +34,7 @@ class BasicExample extends Component {
 
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
+                    <Route path="/login" component={LoginPage} />
                     <Route path="/baseItem" component={BaseItem} />
                     <Route path="/topics" component={Topics} />
                     <Route path="/userList" component={UserListPage} />
