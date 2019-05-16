@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { myLogin } from '../actions/baseAction'
+import LoginDemo from '../components/LoginDemo';
 class LoginPage extends Component {
     constructor(props) {
         super(props)
@@ -24,6 +25,7 @@ class LoginPage extends Component {
                 <h3>Hello User Login Page</h3>
                 <div>
                     <button onClick={this.testLogin}>login</button>
+                    <LoginDemo></LoginDemo>
                 </div>
             </div>
         );

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import BaseItem from './BaseItem'
+import FormDemo from './FormDemo'
 import UserListPage from '../pages/UserListPage'
 import LoginPage from '../pages/LoginPage'
+import PropType from './PropType'
 
 class BasicExample extends Component {
     render() {
@@ -26,6 +28,10 @@ class BasicExample extends Component {
                             <Link to="/topics">Topics</Link>
                         </li>
                         <li>
+                            <Link to="/componentsDemo">Base Component demo</Link>
+                        </li>
+
+                        <li>
                             <Link to="/userList">goToUserPage</Link>
                         </li>
                     </ul>
@@ -37,6 +43,7 @@ class BasicExample extends Component {
                     <Route path="/login" component={LoginPage} />
                     <Route path="/baseItem" component={BaseItem} />
                     <Route path="/topics" component={Topics} />
+                    <Route path="/componentsDemo" component={FormDemo} />
                     <Route path="/userList" component={UserListPage} />
                 </div>
             </Router>
@@ -56,6 +63,7 @@ function About() {
     return (
         <div>
             <h2>Hello About</h2>
+            <PropType name={'hello'} age={1} sex={'男'} features={{'weight':11,'height':33}} salary={99999} />
         </div>
     );
 }
