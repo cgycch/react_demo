@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Accordion, Card } from 'react-bootstrap';
+import { testRedirect, testRequest, testRedirectToNewUrl } from '../actions/demo'
 //import Alert from 'react-bootstrap/Alert'
 import 'bootstrap/dist/css/bootstrap.css';
 //import MyForm from './bootstrap-demo/MyForm'
-import HorizontalForm from './bootstrap-demo/HorizontalForm';
+//import HorizontalForm from './bootstrap-demo/HorizontalForm';
 export default class HelloDemo extends React.Component {
     static propTypes = {
         name: PropTypes.string,
@@ -12,6 +13,32 @@ export default class HelloDemo extends React.Component {
 
     componentDidMount = () => {
         console.log('HelloDemo componentDidMount');
+    }
+
+    handleRedirect = () => {
+        console.log('handleRedirect...')
+        testRedirect().then(res => {
+            console.log('testRedirect res', res)
+        }).catch(err => {
+            console.log('testRedirect err', err)
+        })
+    }
+
+    handleRequest = () => {
+        console.log('handleRequest...')
+        testRequest().then(res => {
+            console.log('handleRequest res', res)
+        }).catch(err => {
+            console.log('handleRequest err', err)
+        })
+    }
+    handleRedirectToNewUrl = () => {
+        console.log('handleRequest...')
+        testRedirectToNewUrl().then(res => {
+            console.log('handleRequest res', res)
+        }).catch(err => {
+            console.log('handleRequest err', err)
+        })
     }
 
     render() {
@@ -24,12 +51,15 @@ export default class HelloDemo extends React.Component {
                 {/* <Button active={true} disabled={true}>disabled Button</Button> */}
                 {/* <Alert key={1} variant={'success'}>success Alert</Alert> */}
                 {/* <MyAccordion/> */}
-{/* 
+                {/* 
                 <Alert key={2} variant={'success'}>
                     This is a {'success'} alert with{'hello'} <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
                 </Alert> */}
                 {/* <MyForm/> */}
-                <HorizontalForm/>
+                {/* <HorizontalForm/> */}
+                <button onClick={this.handleRequest}> test request</button>
+                <button onClick={this.handleRedirect}> test redirect</button>
+                <button onClick={this.handleRedirectToNewUrl}> test redirect to new url</button>
             </div>
         );
     }
