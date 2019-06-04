@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Accordion, Card } from 'react-bootstrap';
-import { testRedirect, testRequest, testRedirectToNewUrl } from '../actions/demo'
+import { testRedirect, testRequest, testRequestWithCookie, testRedirectToNewUrl } from '../actions/demo'
 //import Alert from 'react-bootstrap/Alert'
 import 'bootstrap/dist/css/bootstrap.css';
 //import MyForm from './bootstrap-demo/MyForm'
@@ -32,6 +32,16 @@ export default class HelloDemo extends React.Component {
             console.log('handleRequest err', err)
         })
     }
+
+    handleRequest2 = () => {
+        console.log('handleRequest2...')
+        testRequestWithCookie().then(res => {
+            console.log('handleRequest2 res', res)
+        }).catch(err => {
+            console.log('handleRequest2 err', err)
+        })
+    }
+    
     handleRedirectToNewUrl = () => {
         console.log('handleRequest...')
         testRedirectToNewUrl().then(res => {
@@ -58,6 +68,7 @@ export default class HelloDemo extends React.Component {
                 {/* <MyForm/> */}
                 {/* <HorizontalForm/> */}
                 <button onClick={this.handleRequest}> test request</button>
+                <button onClick={this.handleRequest2}> test request with cookie</button>
                 <button onClick={this.handleRedirect}> test redirect</button>
                 <button onClick={this.handleRedirectToNewUrl}> test redirect to new url</button>
             </div>

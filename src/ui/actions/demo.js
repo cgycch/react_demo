@@ -32,11 +32,6 @@ export  function testRedirectToNewUrl() {
     })
 }
 
-const sleep = (ms) => {
-    console.log('hahahahha')
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
-
 export function testRedirect() {
     console.log('testRedirect...')
     let options = {}
@@ -55,6 +50,31 @@ export function testRedirect() {
         if (status && redirected) {
             console.log('will fetch new url', url)
         }
+        return res.json()
+    }).then(body => {
+        console.log('body', body)
+        return body
+    }).catch(err => {
+        console.log('error', err)
+        return err
+    })
+}
+
+export function testRequestWithCookie() {
+    console.log('testRequestWithCookie...')
+    let options = {}
+    options.method = 'GET'
+    options.mode = 'cors'
+    //options.credentials = 'include'
+    options.credentials = 'same-origin'
+    //options.credentials = 'omit'
+    options.headers = {
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': '*',
+    }
+    //options.body = JSON.stringify({})
+    return fetch('http://localhost:8080/rest/api/mock/newurl', options).then(res => {
+        console.log('result', res)
         return res.json()
     }).then(body => {
         console.log('body', body)
