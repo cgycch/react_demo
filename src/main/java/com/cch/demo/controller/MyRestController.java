@@ -64,8 +64,8 @@ public class MyRestController {
 		System.out.println("redirectMethod...");
 //		System.out.println("##################### redirectMethod request" + request);
 //		System.out.println("##################### redirectMethod response" + response);
-		return ResponseEntity.status(HttpStatus.FOUND).location(new URI("http://localhost:8080/rest/api/mock/newurl")).body("{\"key\":\"api is /mock/302/redirect\"}");
-		//return ResponseEntity.status(HttpStatus.FOUND).location(new URI("https://www.baidu.com/")).body("{}");
+		//return ResponseEntity.status(HttpStatus.FOUND).location(new URI("http://localhost:8080/rest/api/mock/newurl")).body("{\"key\":\"api is /mock/302/redirect\"}");
+		return ResponseEntity.status(HttpStatus.FOUND).location(new URI("https://www.baidu.com/")).body("{}");
 		//return ResponseEntity.status(HttpStatus.OK).body("{\"key\":\"value\"}");
 	}
 	
