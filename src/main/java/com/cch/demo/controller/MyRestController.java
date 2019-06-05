@@ -60,25 +60,37 @@ public class MyRestController {
 		return "hello my friend";
 	}
 
-	@ApiOperation(value = "redirectMethod", notes = "mock reditect to baidu.com")
-	@RequestMapping(value = "/mock/302/redirect", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
-	public ResponseEntity<String> redirectMethod(HttpServletRequest request, HttpServletResponse response)
+	@ApiOperation(value = "redirectMockErr", notes = "mock reditect to login and result is failed")
+	@RequestMapping(value = "/mock/302/redirect/failed", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
+	public ResponseEntity<String> redirectMockErr(HttpServletRequest request, HttpServletResponse response)
 			throws URISyntaxException {
-		System.out.println("redirectMethod...");
-//		System.out.println("##################### redirectMethod request" + request);
-//		System.out.println("##################### redirectMethod response" + response);
-		// return ResponseEntity.status(HttpStatus.FOUND).location(new
-		// URI("http://localhost:8080/rest/api/mock/newurl")).body("{\"key\":\"api is
-		// /mock/302/redirect\"}");
-		return ResponseEntity.status(HttpStatus.FOUND).location(new URI("https://www.baidu.com/")).body("{}");
-		// return ResponseEntity.status(HttpStatus.OK).body("{\"key\":\"value\"}");
+		System.out.println("redirectMockErr...");
+		return ResponseEntity.status(HttpStatus.FOUND).location(new URI("/rest/api/mock/login/unauthorized")).body("{\"username\":\"cgycch\"}");
 	}
 
-	@ApiOperation(value = "redirectUrl", notes = "mock reditect url")
-	@RequestMapping(value = "/mock/newurl", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
-	public String redirectUrl() {
-		System.out.println("redirectUrl...");
-		return "{\"key\":\"api is /mock/newurl\"}";
+	@ApiOperation(value = "redirectMockOk", notes = "mock redirect to login and result is success")
+	@RequestMapping(value = "/mock/302/redirect/success", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
+	public ResponseEntity<String> redirectMockOk(HttpServletRequest request, HttpServletResponse response)
+			throws URISyntaxException {
+		System.out.println("redirectMockOk...");
+		return ResponseEntity.status(HttpStatus.FOUND).location(new URI("/rest/api/mock/login/authorized")).body("{\"username\":\"cgycch\"}");
+	}
+
+	@ApiOperation(value = "loginFailed", notes = "mock login unauthorized")
+	@RequestMapping(value = "/mock/login/unauthorized", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
+	public ResponseEntity<String> loginFailed() {
+		System.out.println("redirectUnauthorized...");
+		//return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{\"username\":\"Guest\"}");
+		return ResponseEntity.status(HttpStatus.FOUND).body("{\"username\":\"Guest\"}");
+	}
+
+	@ApiOperation(value = "loginOk", notes = "mock login authorized")
+	@RequestMapping(value = "/mock/login/authorized", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
+	public ResponseEntity<String> loginOk() {
+		System.out.println("loginOk...");
+		return ResponseEntity.status(HttpStatus.OK).body("{\"username\":\"cgycch\"}");
+		//String content = "<html><body>hello cgycch</body></html>";
+		//return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.TEXT_HTML).header("uid", "abc").body(content);
 	}
 
 	@ApiOperation(value = "sessionMethod", notes = "mock session test")
@@ -86,13 +98,14 @@ public class MyRestController {
 	public ResponseEntity<String> sessionMethod(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
 		System.out.println("sessionMethod...");
-		//response.setContentType("text/html;charset=UTF-8");
+		// response.setContentType("text/html;charset=UTF-8");
 		// 使用request对象的getSession()获取session，如果session不存在则创建一个
 		HttpSession session = request.getSession(false);
-		if(session == null) {
+		if (session == null) {
 			System.out.println("session is null....");
 			session = request.getSession();
-			//return ResponseEntity.status(HttpStatus.FORBIDDEN).body("{\"forbidden\":\"true\"}");
+			// return
+			// ResponseEntity.status(HttpStatus.FORBIDDEN).body("{\"forbidden\":\"true\"}");
 		}
 		// 将数据存储到session中
 		session.setAttribute("data", "cgycch");
@@ -104,6 +117,6 @@ public class MyRestController {
 		} else {
 			System.out.println("服务器已经存在该session了，session的id是：" + sessionId);
 		}
-		return ResponseEntity.status(HttpStatus.OK).body("{\"sessionId\":\""+sessionId+"\"}");
+		return ResponseEntity.status(HttpStatus.OK).body("{\"sessionId\":\"" + sessionId + "\"}");
 	}
 }

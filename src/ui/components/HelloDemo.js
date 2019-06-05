@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Accordion, Card } from 'react-bootstrap';
-import { testRedirect, testRequest, testRequestWithCookie, testRedirectToNewUrl } from '../actions/demo'
+import {testLoginOK, testRequestWithCookie, testRedirectFailed,testRedirectOK} from '../actions/demo'
 //import Alert from 'react-bootstrap/Alert'
 import 'bootstrap/dist/css/bootstrap.css';
 //import MyForm from './bootstrap-demo/MyForm'
@@ -15,42 +15,42 @@ export default class HelloDemo extends React.Component {
         console.log('HelloDemo componentDidMount');
     }
 
-    handleRedirect = () => {
-        console.log('handleRedirect...')
-        testRedirect().then(res => {
-            console.log('testRedirect res', res)
-        }).catch(err => {
-            console.log('testRedirect err', err)
-        })
-    }
-
-    handleRequest = () => {
-        console.log('handleRequest...')
-        testRequest().then(res => {
+    handleRedirectFailed = () => {
+        console.log('testRedirectFailed...')
+        testRedirectFailed().then(res => {
             console.log('handleRequest res', res)
         }).catch(err => {
             console.log('handleRequest err', err)
         })
     }
 
-    handleRequest2 = () => {
-        console.log('handleRequest2...')
-        testRequestWithCookie().then(res => {
-            console.log('handleRequest2 res', res)
+    handleRedirectOk = () => {
+        console.log('handleRedirectOk...')
+        testRedirectOK().then(res => {
+            console.log('handleRedirectOk res', res)
         }).catch(err => {
-            console.log('handleRequest2 err', err)
+            console.log('handleRedirectOk err', err)
+        })
+    }
+
+    handleLoginOK = () => {
+        console.log('handleLoginOK...')
+        testLoginOK().then(res => {
+            console.log('handleLoginOK res', res)
+        }).catch(err => {
+            console.log('handleLoginOK err', err)
+        })
+    }
+
+    handleCookieTest = () => {
+        console.log('handleCookieTest...')
+        testRequestWithCookie().then(res => {
+            console.log('handleCookieTest res', res)
+        }).catch(err => {
+            console.log('handleCookieTest err', err)
         })
     }
     
-    handleRedirectToNewUrl = () => {
-        console.log('handleRequest...')
-        testRedirectToNewUrl().then(res => {
-            console.log('handleRequest res', res)
-        }).catch(err => {
-            console.log('handleRequest err', err)
-        })
-    }
-
     render() {
         //console.log(this.props);
         const { name } = this.props.match.params
@@ -67,10 +67,11 @@ export default class HelloDemo extends React.Component {
                 </Alert> */}
                 {/* <MyForm/> */}
                 {/* <HorizontalForm/> */}
-                <button onClick={this.handleRequest}> test request</button>
-                <button onClick={this.handleRequest2}> test request with cookie</button>
-                <button onClick={this.handleRedirect}> test redirect</button>
-                <button onClick={this.handleRedirectToNewUrl}> test redirect to new url</button>
+                <button onClick={this.handleLoginOK}> api login ok</button>
+                <button onClick={this.handleCookieTest}> request with cookie</button>
+                <button onClick={this.handleRedirectFailed}>Redirect Failed</button>
+                <button onClick={this.handleRedirectOk}>Redirect Success</button>
+               
             </div>
         );
     }
