@@ -4,8 +4,7 @@ import LoginDemo from '../components/LoginDemo';
 class LoginPage extends Component {
     constructor(props) {
         super(props)
-        this.state = { 
-        }
+        this.setState({})
     }
 
   testLogin(){

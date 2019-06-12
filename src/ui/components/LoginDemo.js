@@ -35,11 +35,11 @@ const initialState = {
     isValid: false
 };
 
-const setState = 'SET_STATE';
+const act_type_set_state = 'SET_STATE';
 
 function myreducer(state, action) {
     switch (action.type) {
-        case setState:
+        case act_type_set_state:
             return {
                 ...state,
                 ...action.payload
@@ -71,7 +71,7 @@ export default function LoginDemo() {
             ...field, [name]: value
         });
         dispatch({
-            type: setState,
+            type: act_type_set_state,
             payload: {
                 error: schemaErrors,
                 field: { ...field, [name]: value },

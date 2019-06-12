@@ -9,6 +9,8 @@ import HelloDemo from './HelloDemo'
 //some demo page
 import LoginPage from '../pages/LoginPage'
 import UserListPage from '../pages/UserListPage'
+import RedirectDemoPage from '../pages/RedirectDemoPage'
+
 
 class BasicNavExample extends Component {
     render() {
@@ -24,7 +26,8 @@ class BasicNavExample extends Component {
                         {/* <li><Link to="/topics">Topics</Link></li> */}
                         {/* <li><Link to="/componentsDemo">Base Component demo</Link></li> */}
                         {/* <li><Link to="/userList">goToUserPage</Link></li> */}
-                        <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li>
+                        {/* <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li> */}
+                         <li><Link to="/RedirectDemoPage/cch/18">RedirectDemoPage</Link></li>
                     </ul>
                 </div>
                 <hr/>
@@ -36,6 +39,7 @@ class BasicNavExample extends Component {
                 <Route path="/componentsDemo" component={FormDemo} />
                 <Route path="/userList" component={UserListPage} />
                 <Route path="/helloDemo/:name/:age" component={HelloDemo} />
+                <Route path="/RedirectDemoPage/:name/:age" component={RedirectDemoPage} />
             </Router>
         );
     }
