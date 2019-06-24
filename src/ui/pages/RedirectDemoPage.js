@@ -57,7 +57,7 @@ export default class RedirectDemoPage extends Component {
         return (
             <div >
                 <h3>Redirect Demo Page</h3>
-                <button onClick={this.onTimeupdate}>nomal request</button>
+                <button onClick={this.onTimeupdate} disabled ={this.state.isProcessing}>nomal request</button>
                 <button onClick={this.onServiceRequest}>would be redirect request</button>
                 <div>TIME:{this.state.curTime}</div>
                 <div>nomal request count:{this.state.count}</div>
