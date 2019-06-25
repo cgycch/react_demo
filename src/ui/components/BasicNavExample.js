@@ -10,6 +10,10 @@ import HelloDemo from './HelloDemo'
 import LoginPage from '../pages/LoginPage'
 import UserListPage from '../pages/UserListPage'
 import RedirectDemoPage from '../pages/RedirectDemoPage'
+//some bootstrap demo
+import MyForm from './bootstrap-demo/MyForm'
+import HorizontalForm from './bootstrap-demo/HorizontalForm'
+import Alerts from './bootstrap-demo/Alerts'
 
 
 class BasicNavExample extends Component {
@@ -27,7 +31,11 @@ class BasicNavExample extends Component {
                         {/* <li><Link to="/componentsDemo">Base Component demo</Link></li> */}
                         {/* <li><Link to="/userList">goToUserPage</Link></li> */}
                         {/* <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li> */}
-                         <li><Link to="/RedirectDemoPage/cch/18">RedirectDemoPage</Link></li>
+                        {/* <li><Link to="/RedirectDemoPage/cch/18">RedirectDemoPage</Link></li> */}
+                        {/* bootstrap demo */}
+                        <li><Link to="/bootstrap/MyForm">bootstrap-MyForm</Link></li>
+                        <li><Link to="/bootstrap/HorizontalForm">bootstrap-HorizontalForm</Link></li>
+                        <li><Link to="/bootstrap/Alerts">bootstrap-Alerts</Link></li>
                     </ul>
                 </div>
                 <hr/>
@@ -40,6 +48,10 @@ class BasicNavExample extends Component {
                 <Route path="/userList" component={UserListPage} />
                 <Route path="/helloDemo/:name/:age" component={HelloDemo} />
                 <Route path="/RedirectDemoPage/:name/:age" component={RedirectDemoPage} />
+                {/* bootstrap demo list on bellow */}
+                <Route path="/bootstrap/MyForm" component={MyForm} />
+                <Route path="/bootstrap/HorizontalForm" component={HorizontalForm} />
+                <Route path="/bootstrap/Alerts" component={Alerts} />
             </Router>
         );
     }

@@ -2,8 +2,7 @@ import React from 'react'
 //import PropTypes from 'prop-types'
 import { Button, Form, InputGroup, Col, Row } from 'react-bootstrap';
 //import {FormCheck} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-export default class HelloDemo extends React.Component {
+export default class MyForm extends React.Component {
 
     constructor(...args) {
         super(...args);
@@ -21,7 +20,7 @@ export default class HelloDemo extends React.Component {
     }
 
     componentDidMount = () => {
-        //console.log('HelloDemo componentDidMount');
+        //console.log('MyForm componentDidMount');
     }
 
     handleSubmit(event) {

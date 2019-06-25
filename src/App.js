@@ -5,12 +5,12 @@ import BasicNavExample from './ui/components/BasicNavExample'
 import moment from 'moment-timezone'
 moment.locale('en-us')
 moment.tz.setDefault('America/New_York')
-console.log('my real time zone is:', moment.tz.guess())
-console.log('moment defaultFormat:',moment.defaultFormat)
+//console.log('my real time zone is:', moment.tz.guess())
+//console.log('moment defaultFormat:',moment.defaultFormat)
 class App extends Component {
 
   componentDidMount = () => {
-    console.log('componentDidMount...')
+    //console.log('componentDidMount...')
     getUserInfos().then(res => {
       const { userId, userName } = res
       this.setState({ userId, userName })

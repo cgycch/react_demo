@@ -2,7 +2,6 @@ import React from 'react'
 //import PropTypes from 'prop-types'
 import { Button, Form, Col, Row } from 'react-bootstrap';
 //import {FormCheck} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
 export default class HorizontalForm extends React.Component {
 
     constructor(...args) {
@@ -18,7 +17,7 @@ export default class HorizontalForm extends React.Component {
     }
 
     componentDidMount = () => {
-        //console.log('HelloDemo componentDidMount');
+        //console.log('HorizontalForm componentDidMount');
     }
 
     handleSubmit(event) {
