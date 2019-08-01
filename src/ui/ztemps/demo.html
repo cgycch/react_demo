@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>hello world</title>
+    <style>
+        .container {
+            background-color: gray;
+            width: 500px;
+            height: 500px;
+            align-content: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .head {
+            background-color: burlywood;
+        }
+
+        .body {
+            background-color: rosybrown;
+        }
+
+        .footer {
+            background-color: yellowgreen;
+        }
+        /* please note the order of style define */
+        .title{
+            color: aquamarine;
+        }
+        .head .title{
+            color: red;
+        }
+        .head.title{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+            <h1 class="title">.title</h1>
+        <h1>container</h1>
+        <div class="head">
+            <h1 class="title">.head .title</h1>
+            <h1 class="head title">.head.title</h1>
+        </div>
+        <div class="body">
+            <h1>bady</h1>
+        </div>
+        <div class="footer">
+            <h1>footer</h1>
+        </div>
+    </div>
+</body>
+
+</html>

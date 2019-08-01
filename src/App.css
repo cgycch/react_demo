@@ -31,3 +31,6 @@
     transform: rotate(360deg);
   }
 }
+
+div.myShow {display: block}
+div.myHide {display: none}

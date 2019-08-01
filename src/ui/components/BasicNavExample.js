@@ -28,14 +28,14 @@ class BasicNavExample extends Component {
                         {/* <li><Link to="/login">Login</Link></li> */}
                         {/* <li><Link to="/baseItem">BaseItem</Link></li> */}
                         {/* <li><Link to="/topics">Topics</Link></li> */}
-                        {/* <li><Link to="/componentsDemo">Base Component demo</Link></li> */}
+                        <li><Link to="/formDemo">FormDemo</Link></li>
                         {/* <li><Link to="/userList">goToUserPage</Link></li> */}
                         {/* <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li> */}
                         {/* <li><Link to="/RedirectDemoPage/cch/18">RedirectDemoPage</Link></li> */}
                         {/* bootstrap demo */}
-                        <li><Link to="/bootstrap/MyForm">bootstrap-MyForm</Link></li>
-                        <li><Link to="/bootstrap/HorizontalForm">bootstrap-HorizontalForm</Link></li>
-                        <li><Link to="/bootstrap/Alerts">bootstrap-Alerts</Link></li>
+                        {/* <li><Link to="/bootstrap/MyForm">bootstrap-MyForm</Link></li> */}
+                        {/* <li><Link to="/bootstrap/HorizontalForm">bootstrap-HorizontalForm</Link></li> */}
+                        {/* <li><Link to="/bootstrap/Alerts">bootstrap-Alerts</Link></li> */}
                     </ul>
                 </div>
                 <hr/>
@@ -44,7 +44,7 @@ class BasicNavExample extends Component {
                 <Route path="/login" component={LoginPage} />
                 <Route path="/baseItem" component={BaseItem} />
                 <Route path="/topics" component={Topics} />
-                <Route path="/componentsDemo" component={FormDemo} />
+                <Route path="/formDemo" component={FormDemo} />
                 <Route path="/userList" component={UserListPage} />
                 <Route path="/helloDemo/:name/:age" component={HelloDemo} />
                 <Route path="/RedirectDemoPage/:name/:age" component={RedirectDemoPage} />
