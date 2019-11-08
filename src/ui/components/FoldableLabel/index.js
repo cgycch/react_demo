@@ -64,7 +64,7 @@ export default class FoldableLabel extends Component {
     }
 }
 FoldableLabel.propTypes = {
-    labelId: PropTypes.string.isRequired,
+    labelId: PropTypes.string,
     labelClass: PropTypes.string,
     content: PropTypes.string,
     maxSize: PropTypes.number
