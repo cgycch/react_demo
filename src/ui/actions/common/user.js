@@ -4,6 +4,6 @@ export const getUserInfos =()=>{
         userId:'00008',
         userName:'user abc'
     }
-    console.log('getUserInfos',new Date())
+    //console.log('getUserInfos',new Date())
     return Promise.resolve(userInfo)
    } 
