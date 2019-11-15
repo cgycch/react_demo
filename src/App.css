@@ -34,3 +34,13 @@
 
 div.myShow {display: block}
 div.myHide {display: none}
+
+/**self start*/
+
+select.placeholder {  
+  color: #999;
+}
+select.red {  
+  color: red;
+}
+/**self end*/

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import { ROLER_CONTANT } from './ui/common/contant'
+import { sleep } from './ui/actions/common/utils'
 import { getUserInfos } from './ui/actions/common/user'
 import BasicNavExample from './ui/components/BasicNavExample'
 import moment from 'moment-timezone'
@@ -10,12 +12,25 @@ moment.tz.setDefault('America/New_York')
 class App extends Component {
 
   componentDidMount = () => {
-    //console.log('componentDidMount...')
+    //console.log('App...')
     getUserInfos().then(res => {
       const { userId, userName } = res
       this.setState({ userId, userName })
     }).catch(err => {
       console.log('error on get user info', err)
+    })
+    this.globalContantProcess()
+  }
+  globalContantProcess = () => {
+    //console.log('global contant process...')
+    sleep(1000).then(() => {
+      //console.log('do some thing after 1000')
+      ROLER_CONTANT.env = 'dev'
+      ROLER_CONTANT.roler = {
+        'root': ['root'],
+        'admin': ['admin1', 'admin2'],
+        'user': ['user1', 'user2']
+      }
     })
   }
 

@@ -11,6 +11,7 @@ import LoginPage from '../pages/LoginPage'
 import UserListPage from '../pages/UserListPage'
 import RedirectDemoPage from '../pages/RedirectDemoPage'
 import FoldableLabelPage from '../pages/FoldableLabelPage'
+import Ztemp from '../pages/Ztemp'
 //some bootstrap demo
 import MyForm from './bootstrap-demo/MyForm'
 import HorizontalForm from './bootstrap-demo/HorizontalForm'
@@ -33,7 +34,8 @@ class BasicNavExample extends Component {
                         {/* <li><Link to="/userList">goToUserPage</Link></li> */}
                         {/* <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li> */}
                         {/* <li><Link to="/RedirectDemoPage/cch/18">RedirectDemoPage</Link></li> */}
-                         <li><Link to="/FoldableLabelPage">FoldableLabelPage</Link></li>
+                        {/* <li><Link to="/FoldableLabelPage">FoldableLabelPage</Link></li> */}
+                         <li><Link to="/Ztemp">Ztemp</Link></li>
                         {/* bootstrap demo */}
                         {/* <li><Link to="/bootstrap/MyForm">bootstrap-MyForm</Link></li> */}
                         {/* <li><Link to="/bootstrap/HorizontalForm">bootstrap-HorizontalForm</Link></li> */}
@@ -51,6 +53,7 @@ class BasicNavExample extends Component {
                 <Route path="/helloDemo/:name/:age" component={HelloDemo} />
                 <Route path="/RedirectDemoPage/:name/:age" component={RedirectDemoPage} />
                 <Route path="/FoldableLabelPage" component={FoldableLabelPage} />
+                <Route path="/Ztemp" component={Ztemp} />
                 {/* bootstrap demo list on bellow */}
                 <Route path="/bootstrap/MyForm" component={MyForm} />
                 <Route path="/bootstrap/HorizontalForm" component={HorizontalForm} />
