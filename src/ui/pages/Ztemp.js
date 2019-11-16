@@ -12,7 +12,8 @@ export default class Ztemp extends Component {
         this.state = {
             key: 'value',
             roler: {},
-            curUser: 'user2'
+            curUser: 'user2',
+            showMenu: false,
         }
     }
     componentDidMount = () => {
@@ -32,11 +33,14 @@ export default class Ztemp extends Component {
     }
 
     render() {
-        const { roler, curUser } = this.state
+        const { roler, curUser, showMenu } = this.state
         let className = classnames({
-            'placeholder': curUser === 'user2',
-            'red': true
-        });
+            'placeholder': curUser === 'user2'
+        })
+        const menuClass = classnames({
+            'cch-overfloat-show': showMenu,
+            'cch-overfloat-hide': !showMenu,
+        })
         return (
             <div >
                 <h3>Hello Ztemp Demo</h3>
@@ -45,9 +49,25 @@ export default class Ztemp extends Component {
                 <button className={'hello-btn'}><Link to="/helloDemo/cch/18" className={'hello'}>go to hello</Link></button><br />
                 <Link to="/Ztemp" target='_blank'>go new Ztemp</Link><br />
 
-                <button onClick={() => { window.location.href = '/helloDemo/cch/18' }}>href hello</button>
                 <LinkBtn to={'/helloDemo/cch/18'}>Close</LinkBtn>
-                <button onClick={() => { window.open('/helloDemo/cch/18','_self') }}>open hello</button>
+                <div onClick={() => this.setState({ showMenu: !showMenu })} >show self menu</div>
+                <div className={menuClass}>
+                    <div className={'cch-btnLink'}>
+                        <Link className={'cch-btnLink'} to={'/Ztemp'}>self link 1</Link>
+                    </div>
+                    <div className={'cch-btnLink'}>
+                        <Link className={'cch-btnLink'} to={'/Ztemp'}>self link 2</Link>
+                    </div>
+                    <div className={'cch-btnLink'}>
+                        <Link className={'cch-btnLink'} to={'/Ztemp'}>self link 3</Link>
+                    </div>
+                    <div className={'cch-btnLink'}>
+                        <Link className={'cch-btnLink'} to={'/Ztemp'}>self link 4</Link>
+                    </div>
+                </div>
+
+                <button onClick={() => { window.location.href = '/helloDemo/cch/18' }}>href hello</button>
+                <button onClick={() => { window.open('/helloDemo/cch/18', '_self') }}>open hello</button>
 
                 <button onClick={() => { console.log('roler', { CONTANT_ROLER }) }}>console CONTANT_ROLER</button>
                 <button onClick={() => { console.log('exception', { CONTANT_EXCEPTION }) }}>console CONTANT_EXCEPTION</button>

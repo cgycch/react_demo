@@ -51,6 +51,43 @@ select.red {
   color: red;
 }
 
+/** over float memu simple start*/
+div.cch-overfloat-hide {
+  display: none;
+}
+
+div.cch-overfloat-show {
+  display: block;
+  text-align: center;
+}
+
+/** over float memu simple start*/
+
+/**self link btn start*/
+div.cch-btnLink {
+  width : 100px;
+  height: auto;
+  border: 1px solid gray;
+}
+
+a.cch-btnLink,
+a.cch-btnLink:hover,
+a.cch-btnLink:visited,
+a.cch-btnLink:link {
+  text-decoration : none;
+  color           : black;
+  width           : 100%;
+  height          : 100%;
+  display         : block;
+  background-color: rgb(207, 191, 191);
+}
+
+a.cch-btnLink:active {
+  background-color: rgb(250, 243, 243);
+}
+
+/**self link btn end*/
+
 @import './ui/components/LinkBtn/index.css'
 
 /**self end*/
