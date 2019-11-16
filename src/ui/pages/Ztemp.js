@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { Link } from "react-router-dom";
+import LinkBtn from '../components/LinkBtn'
 import { CONTANT_ROLER, CONTANT_EXCEPTION } from '../common/contant'
 import { sleep } from '../actions/common/utils'
 
@@ -39,9 +40,15 @@ export default class Ztemp extends Component {
         return (
             <div >
                 <h3>Hello Ztemp Demo</h3>
-                <Link to="/Ztemp" target='blank'>new Ztemp</Link><br />
-
                 <button onClick={() => { window.history.back() }}>go back</button>
+                <Link to="/" target='_self'>go home</Link><br />
+                <button className={'hello-btn'}><Link to="/helloDemo/cch/18" className={'hello'}>go to hello</Link></button><br />
+                <Link to="/Ztemp" target='_blank'>go new Ztemp</Link><br />
+
+                <button onClick={() => { window.location.href = '/helloDemo/cch/18' }}>href hello</button>
+                <LinkBtn to={'/helloDemo/cch/18'}>Close</LinkBtn>
+                <button onClick={() => { window.open('/helloDemo/cch/18','_self') }}>open hello</button>
+
                 <button onClick={() => { console.log('roler', { CONTANT_ROLER }) }}>console CONTANT_ROLER</button>
                 <button onClick={() => { console.log('exception', { CONTANT_EXCEPTION }) }}>console CONTANT_EXCEPTION</button>
                 <br />

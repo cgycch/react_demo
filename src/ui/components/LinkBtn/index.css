@@ -1,0 +1,13 @@
+a.btnLink,
+a.btnLink:hover,
+a.btnLink:visited,
+a.btnLink:link,
+a.btnLink:active {
+  text-decoration: none;
+  color          : black;
+  padding        : 3px 8px;
+}
+
+button.btnLink {
+  padding: 0px;
+}

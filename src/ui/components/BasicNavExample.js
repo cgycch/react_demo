@@ -32,7 +32,7 @@ class BasicNavExample extends Component {
                         {/* <li><Link to="/topics">Topics</Link></li> */}
                         {/* <li><Link to="/formDemo">FormDemo</Link></li> */}
                         {/* <li><Link to="/userList">goToUserPage</Link></li> */}
-                        {/* <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li> */}
+                        <li><Link to="/helloDemo/cch/18">HelloDemo</Link></li>
                         {/* <li><Link to="/RedirectDemoPage/cch/18">RedirectDemoPage</Link></li> */}
                         {/* <li><Link to="/FoldableLabelPage">FoldableLabelPage</Link></li> */}
                          <li><Link to="/Ztemp">Ztemp</Link></li>

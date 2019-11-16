@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './App.less'
 import { CONTANT_ROLER, CONTANT_EXCEPTION } from './ui/common/contant'
 import { sleep } from './ui/actions/common/utils'
 import { getUserInfos } from './ui/actions/common/user'
