@@ -5,25 +5,10 @@ export default class LinkBtn extends Component {
     static propTypes = {
         id: PropTypes.string,
         className: PropTypes.string,
+        target: PropTypes.string,
         to: PropTypes.string.isRequired,
         children: PropTypes.string.isRequired,
     }
-
-    // static defaultProps = {
-    //     //target: '_self'
-    //     // id: '',
-    //     // className: '',
-    //     // to: '',
-    //     // children: '',
-    // }
-
-    // constructor(props) {
-    //     super(props)
-    // }
-
-    // componentDidMount = () => {
-    //     console.log('LinkBtn did mounted');
-    // }
 
     render() {
         const { id, className, target, to, children } = this.props
