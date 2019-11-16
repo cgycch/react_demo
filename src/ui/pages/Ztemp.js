@@ -38,9 +38,9 @@ export default class Ztemp extends Component {
         });
         return (
             <div >
-                <h3>Hello</h3>
-                <Link to="/Ztemp">current Ztemp</Link><br />
-                <Link to="/Ztemp" target='_blank'>new Ztemp</Link><br />
+                <h3>Hello Ztemp Demo</h3>
+                <Link to="/Ztemp" target='blank'>new Ztemp</Link><br />
+                <button onClick={() => {window.history.back()}}>go back</button><br />
                 <select className={className} defaultValue={curUser}>
                     {roler.user && roler.user.map(user => {
                         return <option key={user} value={user}>{user}</option>
