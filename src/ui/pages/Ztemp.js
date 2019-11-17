@@ -65,9 +65,9 @@ export default class Ztemp extends Component {
                         <Link className={'cch-btnLink'} to={'/Ztemp'}>self link 4</Link>
                     </div>
                 </div>
-
                 <button onClick={() => { window.location.href = '/helloDemo/cch/18' }}>href hello</button>
                 <button onClick={() => { window.open('/helloDemo/cch/18', '_self') }}>open hello</button>
+                <button onClick={() => {this.props.history.push('/helloDemo/cch/18'); /** this.props.history.go()*/ }}>history push hello</button>
 
                 <button onClick={() => { console.log('roler', { CONTANT_ROLER }) }}>console CONTANT_ROLER</button>
                 <button onClick={() => { console.log('exception', { CONTANT_EXCEPTION }) }}>console CONTANT_EXCEPTION</button>
